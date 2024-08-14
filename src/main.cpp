@@ -62,7 +62,7 @@ void analog_out_sink_callback(const uint8_t *data, uint32_t len) {
 
     for (int i = 0; i < n; i++) {
         /* write data to ringbuffer */
-        ringbuffer[ringbuffer_head] = *data16 / 256;
+        ringbuffer[ringbuffer_head] = *data16 / 128;
         ringbuffer[ringbuffer_head] = ringbuffer[ringbuffer_head] - 128;
         ringbuffer_head++;
         if (ringbuffer_head == sizeof(ringbuffer)) {
